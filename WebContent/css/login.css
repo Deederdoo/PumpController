@@ -1,0 +1,85 @@
+@charset "ISO-8859-1";
+
+body{
+	font: 15px/1.5 Arial, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+	background-image: linear-gradient(to top, #030303 , #534e3b);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+.logo img{
+	width:30%;
+	margin: 0;
+  	position: absolute;
+  	top: 30%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	border-style: solid;
+  	border-color: #9a8847;
+  	border-width: thin;
+}
+
+.container{
+	margin: 0;
+  	position: absolute;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+}
+
+.container #pump button{
+	background-color:#9a8847;
+	font-family: Tahoma;
+	font-size:18px;
+	border-style: solid;
+	border-color:#bfa441;
+	color:#ffffff;
+	width: 120%;
+	height: 35px;
+	margin-bottom: 10px;
+}
+
+.container #port button{
+	background-color:#9a8847;
+	font-family: Tahoma;
+	font-size:18px;
+	border-style: solid;
+	border-color:#bfa441;
+	color:#ffffff;
+	width: 120%;
+	height: 35px;
+}
+
+#prompt input{
+	text-align: center;
+	margin-bottom: 10px;
+	width: 250px;
+	height: 35px;
+	font-size: 18px;
+	font: Consolas;
+	color:#c5bd9e;
+	background-color:#3d392b;
+	border-style: solid;
+	border-color:#726d5b;
+}
+
+#prompt input:hover{
+	border-color:#a79f81;
+}
+
+#loginbutton button{
+	background-color:#9a8847;
+	font-family: Tahoma;
+	font-size:18px;
+	border-style: solid;
+	border-color:#bfa441;
+	color:#ffffff;
+	width: 100px;
+	height: 35px;
+}
+
+#loginbutton button:hover{
+	border-color:#e7cc6b;
+}

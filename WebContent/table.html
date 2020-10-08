@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Pool Pump Table</title>
+		<meta charset="ISO-8859-1">
+		<meta name="viewport" content="width=device-width, initial-scale=0.5">
+		<meta name="author" content="Dustin Horricks">
+		<link rel="stylesheet" href="./css/table.css">
+		<script type="text/javascript"></script>
+		
+		<script>
+		
+			var dayTimerArray = [
+				"monday1", "monday1t", "monday2", "monday2t", "monday3", "monday3t",
+				"tuesday1", "tuesday1t", "tuesday2", "tuesday2t", "tuesday3", "tuesday3t",
+				"wednesday1", "wednesday1t", "wednesday2", "wednesday2t", "wednesday3", "wednesday3t",
+				"thursday1", "thursday1t", "thursday2", "thursday2t", "thursday3", "thursday3t",
+				"friday1", "friday1t", "friday2", "friday2t", "friday3", "friday3t",
+				"saturday1", "saturday1t", "saturday2", "saturday2t", "saturday3", "saturday3t",
+				"sunday1", "sunday1t", "sunday2", "sunday2t", "sunday3", "sunday3t"
+			];
+		
+		</script>
+
+</head>
+<body>
+	
+	<div class="loader" id="loader_wheel"></div>
+	
+	<div class="center" id="center_page">
+	
+	<form id="centerform" name="centerform" method="post" action="createTableController">
+	
+		<div class="tablecontainer">
+		
+			<table>
+			  	<tr>
+				    <th>MONDAY</th>
+				    <th>TUESDAY</th>
+				    <th>WEDNESDAY</th>
+				    <th>THURSDAY</th>
+				    <th>FRIDAY</th>
+				    <th>SATURDAY</th>
+				    <th>SUNDAY</th>
+			  	</tr>
+			  	<tr>
+				    <td><label for="monday1">Monday Time 1:</label>
+	  					<input type="text" id="monday1" name="monday1" placeholder="00:00" disabled><br><br>
+	  					<label for="monday1t">Monday Time 2:</label>
+	  					<input type="text" id="monday1t" name="monday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="tuesday1">Tuesday Time 1:</label>
+	  					<input type="text" id="tuesday1" name="tuesday1" placeholder="00:00" disabled><br><br>
+	  					<label for="tuesday1t">Tuesday Time 2:</label>
+	  					<input type="text" id="tuesday1t" name="tuesday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="wednesday1">Wednesday Time 1:</label>
+	  					<input type="text" id="wednesday1" name="wednesday1" placeholder="00:00" disabled><br><br>
+	  					<label for="wednesday1t">Wednesday Time 2:</label>
+	  					<input type="text" id="wednesday1t" name="wednesday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="thursday1">Thursday Time 1:</label>
+	  					<input type="text" id="thursday1" name="thursday1" placeholder="00:00" disabled><br><br>
+	  					<label for="thursday1t">Thursday Time 2:</label>
+	  					<input type="text" id="thursday1t" name="thursday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="friday1">Friday Time 1:</label>
+	  					<input type="text" id="friday1" name="friday1" placeholder="00:00" disabled><br><br>
+	  					<label for="friday1t">Friday Time 2:</label>
+	  					<input type="text" id="friday1t" name="friday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="saturday1">Saturday Time 1:</label>
+	  					<input type="text" id="saturday1" name="saturday1" placeholder="00:00" disabled><br><br>
+	  					<label for="saturday1t">Saturday Time 2:</label>
+	  					<input type="text" id="saturday1t" name="saturday1t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="sunday1">Sunday Time 1:</label>
+	  					<input type="text" id="sunday1" name="sunday1" placeholder="00:00" disabled><br><br>
+	  					<label for="sunday1t">Sunday Time 2:</label>
+	  					<input type="text" id="sunday1t" name="sunday1t" placeholder="00:00" disabled></td>
+			  	</tr>
+			  	<tr>
+				    <td><label for="monday2">Monday Time 1:</label>
+	  					<input type="text" id="monday2" name="monday2" placeholder="00:00" disabled><br><br>
+	  					<label for="monday2t">Monday Time 2:</label>
+	  					<input type="text" id="monday2t" name="monday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="tuesday2">Tuesday Time 1:</label>
+	  					<input type="text" id="tuesday2" name="tuesday2" placeholder="00:00" disabled><br><br>
+	  					<label for="tuesday2t">Tuesday Time 2:</label>
+	  					<input type="text" id="tuesday2t" name="tuesday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="wednesday2">Wednesday Time 1:</label>
+	  					<input type="text" id="wednesday2" name="wednesday2" placeholder="00:00" disabled><br><br>
+	  					<label for="wednesday2t">Wednesday Time 2:</label>
+	  					<input type="text" id="wednesday2t" name="wednesday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="thursday2">Thursday Time 1:</label>
+	  					<input type="text" id="thursday2" name="thursday2" placeholder="00:00" disabled><br><br>
+	  					<label for="thursday2t">Thursday Time 2:</label>
+	  					<input type="text" id="thursday2t" name="thursday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="friday2">Friday Time 1:</label>
+	  					<input type="text" id="friday2" name="friday2" placeholder="00:00" disabled><br><br>
+	  					<label for="friday2t">Friday Time 2:</label>
+	  					<input type="text" id="friday2t" name="friday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="saturday2">Saturday Time 1:</label>
+	  					<input type="text" id="saturday2" name="saturday2" placeholder="00:00" disabled><br><br>
+	  					<label for="saturday2t">Saturday Time 2:</label>
+	  					<input type="text" id="saturday2t" name="saturday2t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="sunday2">Sunday Time 1:</label>
+	  					<input type="text" id="sunday2" name="sunday2" placeholder="00:00" disabled><br><br>
+	  					<label for="sunday2t">Sunday Time 2:</label>
+	  					<input type="text" id="sunday2t" name="sunday2t" placeholder="00:00" disabled></td>
+			  	</tr>
+			  	<tr>
+				    <td><label for="monday3">Monday Time 1:</label>
+	  					<input type="text" id="monday3" name="monday3" placeholder="00:00" disabled><br><br>
+	  					<label for="monday3t">Monday Time 2:</label>
+	  					<input type="text" id="monday3t" name="monday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="tuesday3">Tuesday Time 1:</label>
+	  					<input type="text" id="tuesday3" name="tuesday3" placeholder="00:00" disabled><br><br>
+	  					<label for="tuesday3t">Tuesday Time 2:</label>
+	  					<input type="text" id="tuesday3t" name="tuesday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="wednesday3">Wednesday Time 1:</label>
+	  					<input type="text" id="wednesday3" name="wednesday3" placeholder="00:00" disabled><br><br>
+	  					<label for="wednesday3t">Wednesday Time 2:</label>
+	  					<input type="text" id="wednesday3t" name="wednesday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="thursday3">Thursday Time 1:</label>
+	  					<input type="text" id="thursday3" name="thursday3" placeholder="00:00" disabled><br><br>
+	  					<label for="thursday3t">Thursday Time 2:</label>
+	  					<input type="text" id="thursday3t" name="thursday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="friday3">Friday Time 1:</label>
+	  					<input type="text" id="friday3" name="friday3" placeholder="00:00" disabled><br><br>
+	  					<label for="friday3t">Friday Time 2:</label>
+	  					<input type="text" id="friday3t" name="friday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="saturday3">Saturday Time 1:</label>
+	  					<input type="text" id="saturday3" name="saturday3" placeholder="00:00" disabled><br><br>
+	  					<label for="saturday3t">Saturday Time 2:</label>
+	  					<input type="text" id="saturday3t" name="saturday3t" placeholder="00:00" disabled></td>
+	  					
+				    <td><label for="sunday3">Sunday Time 1:</label>
+	  					<input type="text" id="sunday3" name="sunday3" placeholder="00:00" disabled><br><br>
+	  					<label for="sunday3t">Sunday Time 2:</label>
+	  					<input type="text" id="sunday3t" name="sunday3t" placeholder="00:00" disabled></td>
+			  	</tr>
+			</table>
+		
+							<input type="text" id="currentProfileId" name="currentProfileId" hidden=hidden/>
+		
+		</div>
+		
+		<div class="profilecontainer">
+		
+			<div class="profiledropdown">
+		
+				<label for="profiles" id="profiles_label">Profiles:</label>
+	
+				<select name="profiles" id="profiles" onchange="changeProfile()">
+				  <option value="Default">Default</option>
+				</select>
+				
+				<script>
+				
+					function httpGetOptions(all){
+						
+						var names;
+						var url = "http://localhost:8080/PumpController/profileNameController";	//CHANCE THIS TO CORRECT IP WHEN NO USING LOCALHOST----------------------------------------------------------------
+					    var xmlHttp = new XMLHttpRequest();
+					    
+					    xmlHttp.onreadystatechange = function() { 
+					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					        	
+					        	
+					        	names = xmlHttp.responseText;
+					    }
+				    	
+					    xmlHttp.open("GET", url + "?profileN=" + all, false); // true for asynchronous
+					    xmlHttp.send();
+					    
+					    var x = document.getElementById("profiles");
+						var nameArray = names.split(',');	//Split the string of names into an array for every ','
+						
+						for(i = 0; i < nameArray.length; i++){
+							
+							console.log("Options: " + nameArray[i]);
+							var option = document.createElement("option");
+							option.text = nameArray[i];
+							x.add(option);
+						}
+					}
+				
+					function changeProfile(){
+						
+						document.getElementById("button_enable").style.display='block';
+						var box = document.getElementById("profiles");
+						var selectedItem = box.options[box.selectedIndex].value;
+						var tempTimerArray = httpGetAsync(selectedItem);
+						
+						document.getElementById("currentProfileId").value = tempTimerArray[0];
+						
+						for(i = 0; i < dayTimerArray.length; i++){
+							
+							document.getElementById(dayTimerArray[i]).value = tempTimerArray[i + 1];
+						}
+					}
+					
+					function httpGetAsync(profileName){
+						
+						var timers;
+						var url = "http://localhost:8080/PumpController/profileDataController";	//CHANGE THIS TO CORRECT IP WHEN NO USING LOCALHOST----------------------------------------------------------------
+					    var xmlHttp = new XMLHttpRequest();
+					    
+					    xmlHttp.onreadystatechange = function() { 
+					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					        	
+					        	timers = xmlHttp.responseText;
+					    }
+				    	
+					    xmlHttp.open("GET", url + "?profileN=" + profileName, false); // true for asynchronous
+					    xmlHttp.send();
+					    
+					    var timersArray = timers.split(',');	//Split the string of timers into an array for every ','
+					    
+					    return timersArray;
+					}
+					
+					httpGetOptions("ALL"); // Call script to set Profiles in dropdown menu
+				
+				</script>
+				
+				<button type="button" id="button_enable" onclick="enableTable()">&#10004;</button>
+				
+				<script>
+				
+					function enableTable(){
+						
+						document.getElementById("button_enable").style.display='none';
+						
+						var box = document.getElementById("profiles");
+						var selectedItem = box.options[box.selectedIndex].value;
+						
+						var url = "http://localhost:8080/PumpController/profileNameController";	//CHANGE THIS TO CORRECT IP WHEN NO USING LOCALHOST----------------------------------------------------------------
+					    var xmlHttp = new XMLHttpRequest();
+				    	
+					    xmlHttp.open("GET", url + "?profileN=" + selectedItem, false); // true for asynchronous
+					    xmlHttp.send();
+					}
+				
+				</script>
+			
+			</div>
+			
+			<div class="profilenewtablename">
+			
+				<label for="input_newtablename" id="input_newtablename_label">New table name:</label>
+	  			<input type="text" id="input_newtablename" name="input_newtablename" placeholder="...">
+			
+			</div>
+		
+			<div class="profilenew">
+			
+				<button type="button" id="button_new" onclick="newButtonFunction()">Create</button>
+				
+				<script>
+				
+					function newButtonFunction(){
+						
+						document.getElementById("input_newtablename_label").style.display='block';
+						document.getElementById("input_newtablename").style.display='block';
+						document.getElementById("profiles_label").style.display='none';
+						document.getElementById("profiles").style.display='none';
+						document.getElementById("button_new").style.display='none';
+						document.getElementById("button_edit").style.display='none';
+						document.getElementById("button_enable").style.display='none';
+						document.getElementById("button_save").style.display='block';
+						document.getElementById("button_cancel").style.display='block';
+						
+						document.getElementById("centerform").reset();
+						
+						for(i = 0; i < dayTimerArray.length; i++){	//removes the textbox disable and changes the background colour for the timer input textboxes
+							
+							document.getElementById(dayTimerArray[i]).disabled = false;
+							document.getElementById(dayTimerArray[i]).style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+						}
+					}
+				
+				</script>
+			
+			</div>
+			
+			<div class="profileedittablename">
+			
+				<label for="input_edittablename" id="input_edittablename_label">Edit table name:</label>
+	  			<input type="text" id="input_edittablename" name="input_edittablename" placeholder="...">
+			
+			</div>
+			
+			<div class="profileedit">
+			
+				<button type="button" id="button_edit" onclick="editButtonFunction()">Edit</button>
+				
+				<script>
+				
+					function editButtonFunction(){	
+						
+						document.getElementById("input_edittablename_label").style.display='block';
+						document.getElementById("input_edittablename").style.display='block';
+						document.getElementById("profiles_label").style.display='none';
+						document.getElementById("profiles").style.display='none';
+						document.getElementById("button_new").style.display='none';
+						document.getElementById("button_edit").style.display='none';
+						document.getElementById("button_enable").style.display='none';
+						document.getElementById("button_save").style.display='block';
+						document.getElementById("button_delete").style.display='block';
+						document.getElementById("button_cancel").style.display='block';
+						
+						var box = document.getElementById("profiles");
+						var selectedItem = box.options[box.selectedIndex].value;
+						document.getElementById("input_edittablename").value = selectedItem;
+						
+						for(i = 0; i < dayTimerArray.length; i++){	//removes the textbox disable and changes the background colour for the timer input textboxes
+							
+							document.getElementById(dayTimerArray[i]).disabled = false;
+							document.getElementById(dayTimerArray[i]).style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+						}
+					}
+				
+				</script>
+			
+			</div>
+		
+			<div class="profilesave">
+			
+				<button id="button_save" type="submit" name="buttonSave" onclick="saveButtonFunction()">Save</button>
+				
+				<script>
+				
+					function saveButtonFunction(){
+						
+						document.getElementById("loader_wheel").style.display='block';
+						document.getElementById("center_page").style.display='none';
+						document.getElementById("MyClockDisplay").style.display='none';
+					}
+				
+				</script>
+			
+			</div>
+			
+			<div class="profiledelete">
+			
+				<button type="button" id="button_delete" onclick="deleteButtonFunction()">Delete</button>
+			
+				<script>
+				
+					function deleteButtonFunction(){
+						
+						var box = document.getElementById("profiles");
+						var selectedItem = box.options[box.selectedIndex].value;
+						
+						if(confirm("Are you sure you want to delete '" + selectedItem.toUpperCase() + "'?")){
+							
+							var url = "http://localhost:8080/PumpController/profileDeleteController";	//CHANGE THIS TO CORRECT IP WHEN NO USING LOCALHOST----------------------------------------------------------------
+						    var xmlHttp = new XMLHttpRequest();
+							
+						    xmlHttp.onreadystatechange = function() { 
+						        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+						        	console.log("Response: " + xmlHttp.responseText);
+						        	window.location.href = xmlHttp.responseText;
+						    }
+					    	
+						    xmlHttp.open("GET", url + "?profileID=" + document.getElementById("currentProfileId").value, false); // true for asynchronous
+						    xmlHttp.send();
+						    
+						}else{
+							
+							// Cancel button does nothing
+						}
+					}
+				
+				</script>
+				
+			</div>
+			
+			<div class="profilecancel">
+			
+				<button type="button" id="button_cancel" onclick="cancelButtonFunction()">Cancel</button>
+				
+				<script>
+				
+					function cancelButtonFunction(){
+						
+						document.getElementById("input_edittablename_label").style.display='none';
+						document.getElementById("input_edittablename").style.display='none';
+						document.getElementById("input_newtablename_label").style.display='none';
+						document.getElementById("input_newtablename").style.display='none';
+						document.getElementById("profiles_label").style.display='block';
+						document.getElementById("profiles").style.display='block';
+						document.getElementById("button_new").style.display='block';
+						document.getElementById("button_edit").style.display='block';
+						document.getElementById("button_enable").style.display='block';
+						document.getElementById("button_save").style.display='none';
+						document.getElementById("button_delete").style.display='none';
+						document.getElementById("button_cancel").style.display='none';
+						
+						document.getElementById("centerform").reset();
+						
+						for(i = 0; i < dayTimerArray.length; i++){	//adds the textbox disable and changes the background colour for the timer input textboxes
+							
+							document.getElementById(dayTimerArray[i]).disabled = true;
+							document.getElementById(dayTimerArray[i]).style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
+						}
+					}
+				
+				</script>
+			
+			</div>
+		
+		</div>
+		
+		<div class="overridecontainer">
+		
+			<div class="override">
+			
+				<button type="button" id="button_override" onclick="overrideButtonFunction()">Override</button>
+				
+				<script>
+				
+					function overrideButtonFunction(){
+						
+						if(document.getElementById("button_on").style.display=='block'){
+							
+							document.getElementById("button_override").style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+							document.getElementById("button_on").style.display='none';
+							document.getElementById("button_off").style.display='none';
+							document.getElementById("button_kill").style.display='none';
+							
+						}else{
+							
+							document.getElementById("button_override").style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+							document.getElementById("button_on").style.display='block';
+							document.getElementById("button_off").style.display='block';
+							document.getElementById("button_kill").style.display='block';
+						}
+					}
+				
+				</script>
+			
+			</div>
+		
+			<div class="overrideon">
+			
+				<button id="button_on" type="button" onclick="override_function('on')">On</button>
+			
+			</div>
+			
+			<div class="overrideoff">
+			
+				<button id="button_off" type="button" onclick="override_function('off')">Off</button>
+			
+			</div>
+			
+			<div class="overridekill">
+			
+				<button id="button_kill" type="button" onclick="override_function('kill')">Kill</button>
+			
+			</div>
+			
+			<script>
+				
+					function override_function(type){
+						
+						var url = "http://localhost:8080/PumpController/overrideController";	//CHANGE THIS TO CORRECT IP WHEN NO USING LOCALHOST----------------------------------------------------------------
+					    var xmlHttp = new XMLHttpRequest();
+					    
+					    xmlHttp.onreadystatechange = function() { 
+					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					        	console.log("Response: " + xmlHttp.responseText);
+					        	window.location.href = xmlHttp.responseText;
+					    }
+				    	
+					    xmlHttp.open("GET", url + "?overrideV=" + type, false); // true for asynchronous
+					    xmlHttp.send();
+					}
+				
+				</script>
+		
+		</div>
+	
+	</form>
+	
+	</div>
+	
+	<h2 id="MyClockDisplay"></h2>
+
+</body>
+
+<script>
+	
+	function showTime(){
+
+		var date = new Date();
+		var day = date.getDay(); // 1 - 7
+		var h = date.getHours(); // 0 - 23
+		var m = date.getMinutes(); // 0 - 59
+		var s = date.getSeconds(); // 0 - 59
+		var session = "AM";
+		var realDay = "";
+
+		if(h == 0){
+			h = 12;
+		}
+
+		if(h > 12){
+			h = h - 12;
+			session = "PM";
+		}
+
+		h = (h < 10) ? "0" + h : h;
+		m = (m < 10) ? "0" + m : m;
+		s = (s < 10) ? "0" + s : s;
+
+		if (day == 1){
+			realDay = "Monday";
+		}else if(day == 2){
+			realDay = "Tuesday";
+		}else if(day == 3){
+			realDay = "Wednesday";
+		}else if(day == 4){
+			realDay = "Thursday";
+		}else if(day == 5){
+			realDay = "Friday";
+		}else if(day == 6){
+			realDay = "Saturday";
+		}else if(day == 7){
+			realDay = "Sunday";
+		}
+
+		var time = realDay + " " + h + ":" + m + ":" + s + " " + session;
+		document.getElementById("MyClockDisplay").innerText = time;
+		document.getElementById("MyClockDisplay").textContent = time;
+
+		setTimeout(showTime, 1000);
+
+		}
+	
+	showTime(); // Called once to start the clock, yep
+
+</script>
+
+</html>
+
+
+
+
+
+
+
+

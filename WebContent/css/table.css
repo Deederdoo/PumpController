@@ -1,0 +1,603 @@
+@charset "UTF-8";
+
+body{
+	font: 15px/1.5 Verdana, Helvetica, sans-serif;
+	padding: 0;
+	margin: 0;
+	background-image: url('../img/background_table.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
+
+h2{
+	
+	text-align: center;
+	color: rgba(255, 255, 255, 0.7);
+	display: block;
+}
+
+.center{
+	
+	//border-style: solid;
+	//border-color: cyan;
+	margin: auto;
+  	padding: 10px;
+  	height: 600px;
+  	width:auto;
+}
+
+.loader {
+	
+  	border: 16px solid #f3f3f3;
+  	border-top: 16px solid #d20059;
+  	border-radius: 50%;
+  	width: 120px;
+  	height: 120px;
+  	animation: spin 2s linear infinite;
+  	margin: 0;
+  	position: absolute;
+  	top: 42%;
+  	left: 45%;
+  	display: none;
+  	transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+	
+  	0% { transform: rotate(0deg); }
+  	100% { transform: rotate(360deg); }
+}
+
+.tablecontainer{
+	
+	//border-style: solid;
+	//border-color: yellow;
+	float: left;
+	width: 85%;
+	height: auto;
+	overflow: auto;
+}
+
+.tablecontainer table{
+	
+	margin: 0 auto;
+	//border-style: solid;
+	//border-width: 2px;
+	width: 100%;
+}
+
+.tablecontainer th{
+	
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.tablecontainer td{
+	
+	border-style: solid;
+	border-color: rgba(255, 255, 255, 0.1);
+	border-width: 1px;
+	padding: 10px;
+	background-color: rgba(255, 255, 255, 0.1);
+	font-color: white;
+	height: auto;
+	width: auto;
+}
+
+.tablecontainer td:hover{
+	
+	background-color: rgba(255, 255, 255, 0.08);
+}
+
+.tablecontainer td label{
+	
+	color: rgba(255, 255, 255, 0.8);
+	display: block;
+    text-align: center;
+}
+
+.tablecontainer td input{
+	
+	background-color: rgba(255, 255, 255, 0.1);
+	border-color: black;
+	border-radius: 5px;
+	position: relative;
+	margin: 0 auto;
+	display: block;
+	height: 18px;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.8);
+}
+
+.tablecontainer td input:hover{
+	border-color: white;
+}
+
+.tablecontainer ::placeholder{
+	
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.profilecontainer {
+	
+	//border-style: solid;
+	//border-color: red;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	width: auto;
+	overflow: auto;
+	height: auto;
+}
+
+.profiledropdown{
+	
+	//border-style: solid;
+	//border-color: pink;
+	margin: 8px;
+	margin-top: 40px;
+  	position:relative;
+}
+
+.profiledropdown label{
+	
+	color: rgba(255, 255, 255, 0.8);
+	display: block;
+    text-align: center;
+}
+
+.profiledropdown select{
+	
+	display: block;
+  	margin-left: 20%;
+ 	margin-right: 2%;
+ 	text-align: center;
+ 	width: 60%;
+ 	height: 30px;
+ 	float: left;
+ 	
+ 	font-size: 18px;
+  	background: rgba(0, 0, 0, 0.3);
+  	color: #fff;
+  	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.profiledropdown select option {
+	
+	font-size: 18px;
+  	background: rgba(0, 0, 0, 0.5);
+  	color: #fff;
+  	text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+
+.profiledropdown button{
+	
+	font-size: 16px;
+	display: block;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 13%;
+	height: 30px;
+}
+
+.profiledropdown button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profiledropdown button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.profilenewtablename{
+	
+	margin: 8px;
+	margin-top: 40px;
+  	position:relative;
+}
+
+.profilenewtablename label{
+	
+	color: rgba(255, 255, 255, 0.8);
+	display: none;
+    text-align: center;
+}
+
+.profilenewtablename input{
+ 	
+ 	background-color: rgba(255, 255, 255, 0.5);
+	border-color: black;
+	border-radius: 5px;
+	position: relative;
+	margin-left: auto;
+ 	margin-right: auto;
+	display: none;
+	height: 30px;
+	width: 80%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.profilenewtablename input:hover{
+	border-color: white;
+}
+
+.profilenewtablename ::placeholder{
+	
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.profileedittablename{
+	
+	margin: 8px;
+  	position:relative;
+}
+
+.profileedittablename label{
+	
+	color: rgba(255, 255, 255, 0.8);
+	display: none;
+    text-align: center;
+}
+
+.profileedittablename input{
+ 	
+ 	background-color: rgba(255, 255, 255, 0.5);
+	border-color: black;
+	border-radius: 5px;
+	position: relative;
+	margin-left: auto;
+ 	margin-right: auto;
+	display: none;
+	height: 30px;
+	width: 80%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.profileedittablename input:hover{
+	border-color: white;
+}
+
+.profileedittablename ::placeholder{
+	
+	color: rgba(0, 0, 0, 0.7);
+}
+
+.profilenew{
+	
+	//border-style: solid;
+	//border-color: purple;
+	margin: 8px;
+	position:relative;
+}
+
+.profilenew button{
+	
+	font-size: 16px;
+	display: block;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.profilenew button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profilenew button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.profileedit{
+	
+	//border-style: solid;
+	//border-color: purple;
+	margin: 8px;
+	position:relative;
+}
+
+.profileedit button{
+	
+	font-size: 16px;
+	display: block;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.profileedit button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profileedit button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.profilesave{
+	
+	//border-style: solid;
+	//border-color: orange;
+	margin: 8px;
+	position:relative;
+}
+
+.profilesave button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.profilesave button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profilesave button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.profiledelete{
+	
+	//border-style: solid;
+	//border-color: purple;
+	margin: 8px;
+	position:relative;
+}
+
+.profiledelete button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.profiledelete button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profiledelete button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.profilecancel{
+	
+	//border-style: solid;
+	//border-color: purple;
+	margin: 8px;
+	position:relative;
+}
+
+.profilecancel button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.profilecancel button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.profilecancel button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.overridecontainer{
+	
+	//border-style: solid;
+	//border-color: purple;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	margin-top: 40px;
+	width: auto;
+	overflow: auto;
+	height: auto;
+}
+
+.override{
+	
+	margin: 8px;
+	position:relative;
+}
+
+.override button{
+	
+	font-size: 16px;
+	display: block;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.override button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.override button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.overrideon{
+	
+	margin: 8px;
+	position:relative;
+}
+
+.overrideon button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.overrideon button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.overrideon button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.overrideoff{
+	
+	margin: 8px;
+	position:relative;
+}
+
+.overrideoff button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.overrideoff button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.overrideoff button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+.overridekill{
+	
+	margin: 8px;
+	position:relative;
+}
+
+.overridekill button{
+	
+	font-size: 16px;
+	display: none;
+	border-radius: 20px;
+	border-color: black;
+	border-width: 2px;
+	background-color: rgba(255, 255, 255, 0.5);
+	margin: 12px;
+  	margin-left: auto;
+ 	margin-right: auto;
+	width:80%;
+	height: 40px;
+}
+
+.overridekill button:hover{
+	
+	background-color: rgba(255, 255, 255, 0.6);
+	border-color: rgba(255, 0, 0, 1);
+}
+
+.overridekill button:active{
+	
+	background-color: rgba(255, 255, 255, 0.4);
+	border-color: rgba(255, 0, 0, 0.5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
