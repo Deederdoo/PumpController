@@ -40,7 +40,7 @@ public class JsonStatusController extends HttpServlet{
 		final EntityManagerFactory emf = Persistence.createEntityManagerFactory("PumpController_PU");
 		EntityManager em = emf.createEntityManager();
 		
-		boolean active = false; //	This boolean determines wether the pump will be active or not
+		boolean active = false; //	This boolean determines weather the pump will be active or not
 		
 		try {
 			

@@ -173,7 +173,7 @@
 					function httpGetOptions(all){
 						
 						var names;
-						var url = "http://localhost:8080/PumpController/profileNameController";
+						var url = "profileNameController";
 					    var xmlHttp = new XMLHttpRequest();
 					    
 					    xmlHttp.onreadystatechange = function() { 
@@ -204,6 +204,7 @@
 						var box = document.getElementById("profiles");
 						var selectedItem = box.options[box.selectedIndex].value;
 						var tempTimerArray = httpGetAsync(selectedItem);
+						loadSetProfiles(selectedItem); //	Check if the profile is already enabled from previous sessions
 						
 						document.getElementById("currentProfileId").value = tempTimerArray[0];
 						
@@ -216,7 +217,7 @@
 					function httpGetAsync(profileName){
 						
 						var timers;
-						var url = "http://localhost:8080/PumpController/profileDataController";
+						var url = "profileDataController";
 					    var xmlHttp = new XMLHttpRequest();
 					    
 					    xmlHttp.onreadystatechange = function() { 
@@ -248,11 +249,32 @@
 						var box = document.getElementById("profiles");
 						var selectedItem = box.options[box.selectedIndex].value;
 						
-						var url = "http://localhost:8080/PumpController/profileNameController";
+						var url = "profileNameController";
 					    var xmlHttp = new XMLHttpRequest();
 				    	
-					    xmlHttp.open("GET", url + "?profileN=" + selectedItem, false); // true for asynchronous
+					    xmlHttp.open("GET", url + "?profileS=" + selectedItem, false); // true for asynchronous
 					    xmlHttp.send();
+					}
+					
+					function loadSetProfiles(profileName){
+						
+						var returnedName;
+						var url = "profileNameController";
+					    var xmlHttp = new XMLHttpRequest();
+						
+					    xmlHttp.onreadystatechange = function() { 
+					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					        	
+					        	returnedName = xmlHttp.responseText;
+					    }
+				    	
+					    xmlHttp.open("GET", url + "?profileS=LoadNames", false); // true for asynchronous
+					    xmlHttp.send();
+					    
+					    if(profileName == returnedName){
+					    	
+					    	document.getElementById("button_enable").style.display='none';
+					    }
 					}
 				
 				</script>
@@ -286,7 +308,7 @@
 						
 						document.getElementById("centerform").reset();
 						
-						for(i = 0; i < dayTimerArray.length; i++){	//removes the textbox disable and changes the background colour for the timer input textboxes
+						for(i = 0; i < dayTimerArray.length; i++){	//	removes the textbox disable and changes the background colour for the timer input textboxes
 							
 							document.getElementById(dayTimerArray[i]).disabled = false;
 							document.getElementById(dayTimerArray[i]).style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
@@ -368,7 +390,7 @@
 						
 						if(confirm("Are you sure you want to delete '" + selectedItem.toUpperCase() + "'?")){
 							
-							var url = "http://localhost:8080/PumpController/profileDeleteController";
+							var url = "profileDeleteController";
 						    var xmlHttp = new XMLHttpRequest();
 							
 						    xmlHttp.onreadystatechange = function() { 
@@ -478,20 +500,63 @@
 				
 					function override_function(type){
 						
-						var url = "http://localhost:8080/PumpController/overrideController";
+						var url = "overrideController";
 					    var xmlHttp = new XMLHttpRequest();
 					    
-					    xmlHttp.onreadystatechange = function() { 
+					    /*xmlHttp.onreadystatechange = function() { 
 					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
 					        	console.log("Response: " + xmlHttp.responseText);
 					        	window.location.href = xmlHttp.responseText;
-					    }
+					    }*/
 				    	
 					    xmlHttp.open("GET", url + "?overrideV=" + type, false); // true for asynchronous
 					    xmlHttp.send();
+					    
+					    overrideButtonStatus(); // Need to be called to update the vision of the buttons
 					}
 				
 				</script>
+		
+		<script>
+		
+			function overrideButtonStatus(){
+				
+				var status;
+				var url = "overrideController";
+			    var xmlHttp = new XMLHttpRequest();
+			    
+			    xmlHttp.onreadystatechange = function() { 
+			        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+			        	
+			        	status = xmlHttp.responseText;
+			    }
+		    	
+			    xmlHttp.open("GET", url + "?overrideS=isSet", false); // true for asynchronous
+			    xmlHttp.send();
+			    
+			    if(status == "kill"){
+			    	
+			    	document.getElementById("button_kill").style.visibility = "hidden";
+			    	document.getElementById("button_on").style.visibility = "visible";
+			    	document.getElementById("button_off").style.visibility = "visible";
+			    	
+			    }else if(status == "on"){
+			    	
+			    	document.getElementById("button_on").style.visibility = "hidden";
+			    	document.getElementById("button_off").style.visibility = "visible";
+			    	document.getElementById("button_kill").style.visibility = "visible";
+			    	
+			    }else if(status == "off"){
+			    	
+			    	document.getElementById("button_off").style.visibility = "hidden";
+			    	document.getElementById("button_on").style.visibility = "visible";
+			    	document.getElementById("button_kill").style.visibility = "visible";
+			    }
+			}
+			
+			overrideButtonStatus();
+		
+		</script>
 		
 		</div>
 	

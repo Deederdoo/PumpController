@@ -4,7 +4,8 @@ body{
 	font: 15px/1.5 Verdana, Helvetica, sans-serif;
 	padding: 0;
 	margin: 0;
-	background-image: url('../img/background_table.png');
+	/*background-image: url('../img/background_table.png');*/
+	background-color: #171c27;
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
