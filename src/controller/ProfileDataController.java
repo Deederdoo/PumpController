@@ -24,8 +24,6 @@ public class ProfileDataController extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		resp.addHeader("Access-Control-Allow-Origin", "*");
-		
 		final EntityManagerFactory emf = Persistence.createEntityManagerFactory("PumpController_PU");
 		EntityManager em = emf.createEntityManager();
 		
