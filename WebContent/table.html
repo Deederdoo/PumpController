@@ -254,6 +254,8 @@
 				    	
 					    xmlHttp.open("GET", url + "?profileS=" + selectedItem, false); // true for asynchronous
 					    xmlHttp.send();
+					    
+					    displayActiveProfile(); //	Display currently selected Profile as active
 					}
 					
 					function loadSetProfiles(profileName){
@@ -279,6 +281,33 @@
 				
 				</script>
 			
+				<p id="p_activeName">Active: None</p>
+				
+				<script>
+				
+					function displayActiveProfile(){
+						
+						var returnedName;
+						var url = "profileNameController";
+					    var xmlHttp = new XMLHttpRequest();
+						
+					    xmlHttp.onreadystatechange = function() { 
+					        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+					        	
+					        	returnedName = xmlHttp.responseText;
+					    }
+				    	
+					    xmlHttp.open("GET", url + "?profileS=LoadNames", false); // true for asynchronous
+					    xmlHttp.send();
+					    
+					    console.log("Returned Name: " + returnedName);
+					    document.getElementById("p_activeName").innerHTML = "Active: " + returnedName;
+					}
+					
+					displayActiveProfile();
+				
+				</script>
+			
 			</div>
 			
 			<div class="profilenewtablename">
@@ -300,6 +329,7 @@
 						document.getElementById("input_newtablename").style.display='block';
 						document.getElementById("profiles_label").style.display='none';
 						document.getElementById("profiles").style.display='none';
+						document.getElementById("p_activeName").style.display='none'
 						document.getElementById("button_new").style.display='none';
 						document.getElementById("button_edit").style.display='none';
 						document.getElementById("button_enable").style.display='none';
@@ -338,6 +368,7 @@
 						document.getElementById("input_edittablename").style.display='block';
 						document.getElementById("profiles_label").style.display='none';
 						document.getElementById("profiles").style.display='none';
+						document.getElementById("p_activeName").style.display='none'
 						document.getElementById("button_new").style.display='none';
 						document.getElementById("button_edit").style.display='none';
 						document.getElementById("button_enable").style.display='none';
@@ -367,6 +398,13 @@
 				<script>
 				
 					function saveButtonFunction(){
+						
+						var editedValue = document.getElementById("input_edittablename").value;
+						var url = "profileNameController";
+					    var xmlHttp = new XMLHttpRequest();
+				    	
+					    xmlHttp.open("GET", url + "?profileS=" + editedValue, false); // true for asynchronous
+					    xmlHttp.send();
 						
 						document.getElementById("loader_wheel").style.display='block';
 						document.getElementById("center_page").style.display='none';
@@ -426,6 +464,7 @@
 						document.getElementById("input_newtablename").style.display='none';
 						document.getElementById("profiles_label").style.display='block';
 						document.getElementById("profiles").style.display='block';
+						document.getElementById("p_activeName").style.display='block'
 						document.getElementById("button_new").style.display='block';
 						document.getElementById("button_edit").style.display='block';
 						document.getElementById("button_enable").style.display='block';
