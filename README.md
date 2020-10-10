@@ -17,3 +17,7 @@ ESP 32 MicroController
 Interface User Input Timers
 
 ![Image of Interface](https://i.imgur.com/uuCPRWv.png)
+
+Quick Demo
+
+![GIF Quick Demo](https://i.imgur.com/3MbiiFj.gif)
