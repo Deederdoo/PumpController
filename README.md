@@ -5,3 +5,7 @@ Using Java JPA, Html, Css, Javascript.
 
 
 ![Image of Pump System](https://i.imgur.com/frHaBFf.jpg)
+
+Dual Relay
+
+![Image of Relay](https://i.imgur.com/ZAHyyWa.jpg)
