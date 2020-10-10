@@ -20,4 +20,4 @@ Interface User Input Timers
 
 Quick Demo
 
-![GIF Quick Demo](https://i.imgur.com/3MbiiFj.gif)
+![GIF Quick Demo](https://i.imgur.com/hz0KsOm.gif)
