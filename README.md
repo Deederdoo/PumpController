@@ -9,3 +9,7 @@ Using Java JPA, Html, Css, Javascript.
 Dual Relay
 
 ![Image of Relay](https://i.imgur.com/ZAHyyWa.jpg)
+
+ESP 32 MicroController
+
+![Image of ESP 32](https://i.imgur.com/c13MZDb.jpg)
